@@ -14,7 +14,7 @@ const mongoURL = 'mongodb://localhost: 27017';
 const dbName = "expressdb";
 
 //Js
-const login = require('./login');
+const login = require('./loginValidar');
 //const reserva = require('./reserva');//agregue
 
 //Manejo de sesión en Express
@@ -140,7 +140,7 @@ app.get('/datos/reserva', function (req, res) {
       res.send(jsonDatosDiasReserva)
     }
     })
-  console.log("Estoy aca");
+  console.log("Lei disponibildad.json");
 
 })
 
@@ -152,7 +152,7 @@ app.get('/datos/reservaVuelta', function (req, res) {
       res.send(jsonDatosDiasReservaVuelta)
     }
     })
-  console.log("Estoy aca2");
+  console.log("Lei disponibildad2");
 
 })
 

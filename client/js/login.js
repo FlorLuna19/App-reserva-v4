@@ -50,10 +50,10 @@ function mostrarUsuarioLogueado(callback){
    
     request.open('GET', '/usuarios/datosUsuarios');
     request.send();
-}*/
+}
 
 function muestraDatosUsuario(nombreUsuario) {
     var nombre = document.getElementById("user-id");
     console.log("Hola" + nombreUsuario)
 
-}
+}*/
