@@ -5,6 +5,8 @@ const path = require("path");
 const fs = require('fs');
 const expressSession = require('express-session');
 
+const exphbs= require('handlebars');
+
 //Libreria de Mongodb
 const mongodb = require('mongodb');
 
