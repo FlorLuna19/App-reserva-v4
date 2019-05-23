@@ -1,0 +1,26 @@
+<div class="lugares">
+    {{#each dogList}}
+        <button onclick="showInfo({{this.id}})">
+    {{/each}}
+</div>
+<div id="info">(seleccione un boton)</div>
+
+<script>
+    
+    // Script que se va a ejecutar en el navegador, con una consulta
+    // AJAX al server que devuelve la info
+    function mostrarInfo(disponibilidad) {
+
+        let infoLugares = new XMLHttpRequest();
+        infoLugares.onload = function() {
+            // Cuando volvió la info, pongo en el div que está al pie la info recibida (texto) y
+            // también un botón cuyo "onclick" llama a otra función que defino en este script,
+            // showDogPage(...), que recibe el id del perro y navega a la página de info completa.
+            document.getElementById("info").innerHTML = `${infoLugares.responseText} <button onclick="reservaUnLugar(${...})"";
+        }
+
+        xhr.open("GET", `/getDisponibilidad?id=${}`);
+        xhr.send();
+    }
+
+</script>

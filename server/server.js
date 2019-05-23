@@ -5,7 +5,6 @@ const path = require("path");
 const fs = require('fs');
 const expressSession = require('express-session');
 
-const exphbs= require('handlebars');
 
 //Libreria de Mongodb
 const mongodb = require('mongodb');
@@ -14,6 +13,9 @@ const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
 const mongoURL = 'mongodb://localhost: 27017';
 const dbName = "expressdb";
+
+//Uso de Handlebars
+const exphbs= require('handlebars');
 
 //Js
 const login = require('./loginValidar');
@@ -35,6 +37,18 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.use(express.static(path.join(__dirname, '../client/html')));
 app.use(express.static(path.join(__dirname, '../client/js')));
 app.use(express.static(path.join(__dirname, '../client/css')));
+
+
+//Configuración vista con Handlebars
+//Indicamos el motor, layout (base) default y carpeta de ese y otros layouts que hubiera
+//app.engine('handlebars', exphbs({
+  //defaultLayout: 'main-layout',
+  //layoutsDir: path.join(__dirname, '../handlebars/lugares.handlebars')
+//}));
+// Acá seteamos como motor de renderizado de vistas "handlebars"
+//app.set('view engine', 'handlebars')
+// Y acá seteamos la carpeta para las vistas
+//app.set('views', path.join(__dirname, 'handlebars'));
 
 
 
@@ -115,6 +129,13 @@ app.get('/recorrido', function (req, res) {
 app.get('/empresa', function (req, res) {
   console.log("Entre a empresa");
   res.sendFile(path.join(__dirname, '../client/html/empresa.html'));
+})
+
+
+//Dirijo la ruta para que ingrese a reserva con handlebars
+app.get('/reservahandlebars', function (req, res) {
+  console.log("Entre a reserva con handlebars");
+  res.sendFile(path.join(__dirname, '../client/html/reservaHANDLE.html'));
 })
 
 
