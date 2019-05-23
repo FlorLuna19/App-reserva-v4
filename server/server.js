@@ -15,7 +15,7 @@ const mongoURL = 'mongodb://localhost: 27017';
 const dbName = "expressdb";
 
 //Uso de Handlebars
-const exphbs= require('handlebars');
+const exphbs= require("express-handlebars");
 
 //Js
 const login = require('./loginValidar');
@@ -40,15 +40,16 @@ app.use(express.static(path.join(__dirname, '../client/css')));
 
 
 //Configuración vista con Handlebars
-//Indicamos el motor, layout (base) default y carpeta de ese y otros layouts que hubiera
-//app.engine('handlebars', exphbs({
-  //defaultLayout: 'main-layout',
-  //layoutsDir: path.join(__dirname, '../handlebars/lugares.handlebars')
-//}));
 // Acá seteamos como motor de renderizado de vistas "handlebars"
-//app.set('view engine', 'handlebars')
-// Y acá seteamos la carpeta para las vistas
-//app.set('views', path.join(__dirname, 'handlebars'));
+app.engine("handlebars", exphbs({
+  defaultLayout: "main-layout",
+  layoutsDir: path.join(__dirname, "views/layouts")
+})
+);
+
+//Seteamos la carpeta para las vistas
+app.set("view engine", "handlebars");
+app.set("views", path.join(__dirname, "views"));
 
 
 
