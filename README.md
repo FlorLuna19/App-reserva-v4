@@ -1,4 +1,4 @@
-# App-reserva-v2
+# App-reserva
 //Idea general
 Una empresa ofrece a sus empleados un servicio de transporte (combis o remises) desde un punto de encuentro hasta la ubicaci�n del lugar de trabajo.
 
