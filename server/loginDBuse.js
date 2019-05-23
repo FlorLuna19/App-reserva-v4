@@ -18,7 +18,7 @@ function consultaUsuarios() {
 
         if (err) {            
             // Error en la conexión
-            cbError("No se pudo conectar a la DB. " + err);
+            console.log("No se pudo conectar a la DB. " + err);
         } else {
 
             // Me traigo un objeto que apunte a la db "expressdb"
